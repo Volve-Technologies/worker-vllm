@@ -93,6 +93,8 @@ DEFAULT_ARGS = {
     "disable_logprobs_during_spec_decoding": os.getenv('DISABLE_LOGPROBS_DURING_SPEC_DECODING', None),
     "otlp_traces_endpoint": os.getenv('OTLP_TRACES_ENDPOINT', None),
     "use_v2_block_manager": os.getenv('USE_V2_BLOCK_MANAGER', 'true'),
+    "tool_call_parser": os.getenv("TOOL_CALL_PARSER", None),
+    "reasoning_parser": os.getenv("REASONING_PARSER", None),
 }
 limit_mm_env = os.getenv('LIMIT_MM_PER_PROMPT')
 if limit_mm_env is not None:
