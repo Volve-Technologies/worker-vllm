@@ -42,13 +42,6 @@ ENV PYTHONPATH="/:/vllm-workspace"
 
 
 COPY src /src
-RUN --mount=type=secret,id=HF_TOKEN,required=false \
-    if [ -f /run/secrets/HF_TOKEN ]; then \
-    export HF_TOKEN=$(cat /run/secrets/HF_TOKEN); \
-    fi && \
-    if [ -n "$MODEL_NAME" ]; then \
-    python3 /src/download_model.py; \
-    fi
 
 # Start the handler
 CMD ["python3", "/src/handler.py"]
